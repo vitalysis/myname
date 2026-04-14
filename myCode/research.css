@@ -1,0 +1,732 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+body{
+   font-family:  "montserrat";
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  height: 80px;
+  padding: 40px 20px; /* 40px adds more space to the top and bottom */
+  min-height: 120px;  /* Ensures the 'body' of the bar is thick enough */
+  width: 100%;
+  background-color: #3b3266;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;   /* VERY IMPORTANT */
+}
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px, 20px;
+    margin-top: 20px;
+}
+
+.logo img{
+    margin-bottom: 10px;
+    padding: 0 30px;
+    padding-left: 2px;
+    margin: 0;
+    margin-top: -29px;
+    mix-blend-mode: screen;
+}
+
+
+.navbar ul{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 0px;
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    gap: 35px;
+    margin-left: 27px;
+    margin-right: 25px;
+    padding: 0%;
+    margin-top: -40px;
+    font-family: "Open Sans";
+    list-style: none;
+}
+nav ul li a{
+   color: #000;
+    padding: 7px 0;
+    font-size: 17px;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    color: white;
+
+}
+nav ul li a:hover{
+    color:  black;
+    transition: .3s;
+    border-bottom: 2px solid black;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.search-box {
+  position: relative;      /* for absolute results */
+  flex-shrink: 0;          /* prevents the box from shrinking */
+}
+
+.search-input {
+  width: 200px;
+  transition: width 0.3s ease;
+}
+
+.search-input:focus {
+  width: 300px;             /* expand to right on focus */
+}
+
+.checkbtn{
+    font-size: 15px;
+    color: black;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+
+}
+#check{
+    display: none;
+
+}
+@media (max-width: 952px){
+    label.logo{
+        font-size: 30px;
+        padding-left: 10px;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+
+
+.search {
+    align-items: center;
+    margin-right: 60px;
+    margin-left: 40px;
+    margin-top: -40px;
+}
+
+
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    padding: 6px 10px;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: black;
+}
+
+.search-input {
+    width: 250px;
+    padding: 8px 10px 8px 38px;  /* space for icon */
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: #fff;
+    outline: none;
+    color: #333;
+    font-size: 15px;
+}
+
+.search-input:focus {
+    border: 1px solid black;
+}
+/* container must be relative */
+
+
+/* results go BELOW the input */
+#searchResults {
+  position: absolute;
+  top: 100%;        /* ⬅️ puts it UNDER the search input */
+  left: 0;
+  width: 100%;     /* same width as input */
+  background-color: white;
+  margin-top: 6px;
+  padding: 0;
+  list-style: none;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 9999;
+}
+
+/* each result */
+#searchResults li {
+  color: black;  
+  padding: 10px 14px;
+  cursor: pointer;
+  white-space: nowrap;  /* prevents sideways growth */
+}
+#searchResults li,
+#searchResults li a {
+  color: black !important;
+}
+
+#searchResults li:hover a{
+  background-color: rgb(184, 27, 216);
+  border-radius: 15px;
+}
+
+
+ .navbar-b {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 5px;
+    color: black;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    font-size: 20px;
+    z-index: 10; /* stay above content */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+    min-height: 60px;
+    width: 100vw;       /* full viewport width */
+    left: 0;            /* ensure it starts at left edge */
+    margin: 0;          /* remove any inherited margin */
+}
+#toggle-search {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    width: 0;
+    height: 0;
+}
+
+.close-icon {
+    display: none;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    width: 0;
+    height: 0;
+}
+#checkbox{
+    display: none;
+}
+
+@media (max-width: 1250px) {
+ #searchResults {
+  position: absolute;
+  top: 100%;        /* ⬅️ puts it UNDER the search input */
+  left: -47px;
+  width: 100%;
+  max-width: 300px;
+  background: white;
+  margin-top: 6px;
+  display: none;
+  padding: 0;
+  list-style: none;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 9999;
+  border: 1px solid #ccc; /* Optional: adds a border to match the input */
+  border-radius: 8px;     /* Optional: matches your search box curves */
+}
+#searchResults.show {
+  display: block;
+
+}
+
+/* each result */
+#searchResults li {
+  color: black;  
+  padding: 10px 14px;
+  cursor: pointer;
+  white-space: nowrap;  /* prevents sideways growth */
+}
+#searchResults li,
+#searchResults li a {
+  color: black !important;
+}
+
+#searchResults li:hover a{
+  background-color:  #0e4c6d;
+  border-radius: 15px;
+}
+  
+
+  .search-input:focus {
+    width: 180px;   /* expands but DOES NOT break nav */
+  }
+
+    .search {
+        position: absolute;
+        top: 0;
+        right: 15px;
+        z-index: 9999;
+    }
+    .search-box {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        top: 43px;
+       
+       
+}
+    .search-icon {
+        position: absolute;
+        top: 43px;
+        right: 15px;
+        left: auto;
+        transform: none;
+        font-size: 19px;
+        color: black;
+    }
+
+
+    #toggle-search {
+        display: none;
+    }
+
+    /* The label that holds the icons */
+    .toggle-label {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .search-input {
+        display: none;
+        right: 50px;           /* aligns it under the icon */
+        top: 30px;
+        width: 160px;
+        position: relative;
+    } 
+
+    #toggle-search:checked + label + .search-input {
+        display: block;
+    }
+
+    #toggle-search:checked + label + .search-input {
+        display: block;
+    }
+     .checkbtn{
+        display: block;
+        font-size: 16px;
+        cursor: pointer;
+        color: black;
+    }
+    nav ul {
+        position: fixed;
+        width: 94vw;
+        height: 100vh;
+        background:   #2d3c80;
+        top: 80px;
+        left: -100vw;
+        text-align: center;
+        transition: all .5s ease;
+        z-index: 999;
+        flex-direction: column;
+         justify-content: flex-start;
+        padding-top: 50px;
+        list-style: none;
+
+    }
+    
+    nav ul li{
+         display: block;
+         margin: 30px 0;
+         line-height: 30px;
+         text-align: center;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+    a:hover,a.active{
+        background: none;
+        color: black;
+    }
+    html, body {
+        overflow-x: hidden;
+    }
+    #check:checked ~ ul {
+        left: 0;
+    }
+    #check {
+        display: none;
+    }
+    .navbar {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
+  }
+
+  label .logo {
+    margin-left: 0;
+    padding-left: 0;   
+    margin-top: 20px;
+    align-self: flex-start;
+  }
+
+  .checkbtn {
+    position: absolute;
+    right: 5px;     /* menu goes right */
+    top: 22px;       /* adjust up/down */
+    cursor: pointer;
+  }
+    }
+    
+header input[type="search"] {
+  width: 50px;
+} 
+    
+  .navbar-b {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 5px;
+    color: black;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    font-size: 20px;
+    z-index: 10; /* stay above content */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+    min-height: 60px;
+    width: 100vw;       /* full viewport width */
+    left: 0;            /* ensure it starts at left edge */
+    margin: 0;          /* remove any inherited margin */
+}
+
+hr{
+    border-top: 1px solid #ccc;
+}
+p{
+    font-size: 20px;
+    font-family: 'Open Sans';
+    line-height: 35px;
+    padding-left: 20px;
+
+}
+h3{
+     font-size: 26px;
+     font-family: 'Open Sans' sans-serif;
+     padding: 20px;
+}
+h1{
+    font-family: 'Open Sans', sans-serif;
+    padding: 20px;
+    font-size: 45px;
+}
+h5{
+    font-family: 'Open Sans', sans-serif;
+    padding: 20px;
+    font-size: 34px;
+}
+h2{
+     font-family: 'Open Sans', sans-serif;
+     font-size: 35px;
+     padding: 20px;
+}
+.research {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;           /* Change from 100vh to auto so it doesn't take the whole screen */
+    padding: 0 40px;        /* Matches the 40px padding in your .two-column class */
+    margin-top: 20px;
+}
+
+/* 2. Update the image to shrink more on mobile */
+.research img {
+    width: 100%;            /* Fills the container on desktop */
+    height: auto;
+    border-radius: 15px;
+    display: block;
+}
+
+/* 3. The specific shrink for phone view */
+@media (max-width: 1000px) {
+    .research {
+        padding: 0 40px;    /* Adding even more padding here forces the image to shrink more */
+    }
+    
+    .research img {
+        width: 100%;         /* This makes it significantly smaller and less 'broad' */
+        height: auto;
+    }
+    h2{
+        font-size: 40px;
+    }
+}
+
+
+.b1 {
+    padding-left: 20px;
+    font-size: 20px;
+}
+.b1{
+    padding-left: 20px;
+}
+.b1 li::before {
+    content: "\2022";
+    color: rgb(184, 27, 216);
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    margin-bottom: 28px;
+    font-weight: 800;
+    font-size: large;
+}
+body footer{
+    background: darkslateblue;
+}
+footer{
+    width: 100%;
+    position: absolute;
+    background:  linear-gradient(to right, #00093c #2d0b00);
+    color: #fff;
+    padding: 100px 0 30px;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.footer-content p{
+    width: 100px;
+    margin: auto;
+}
+.row{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 15px;
+
+}
+.col{
+    flex-basis: 25%;
+    padding: 10px;
+}
+.col:nth-child(2),.col:nth-child(3) {
+    flex-basis: 15%;
+}
+.logo{
+    width: 60px;
+    margin-bottom: 30px;
+}
+.col p {
+    padding: 0%;
+}
+ .col h3{
+    width: fit-content;
+    padding: 0%;
+    margin-bottom: 20px;
+    position: relative;
+}
+.col a {
+    color: white;
+}
+.col form{
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 50px;
+}
+form .fa{
+    font-size: 18px;
+    margin-right: 10px;
+}
+form input{
+    width: 100%;
+    background: transparent;
+    color: #ccc;
+    border: 0;
+    outline: none;
+    padding-left: 10px;
+}
+form button{
+    background: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+form button .fa{
+    font-size: 20px;
+    color: #ccc;
+}
+form button .a {
+     font-size: 15px;
+     color: #ccc;
+}
+h4{
+    font-size: 14px;
+    border-bottom: 1px;
+    font-family: "Open Sans";
+}
+.social-icons {
+  position: relative;
+}
+
+.social-icons ul {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.social-icons ul li {
+    list-style: none;
+}
+
+@media (max-width: 858px) {
+  .social-icons ul {
+    position: absolute;
+   transform: translate(-10%, -70%);
+   display: flex;
+  }
+}
+
+.social-icons .fab{
+    font-size: 20px;
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    text-align: center;
+    background: #fff;
+    color: #000;
+    margin-right: 15px;
+    cursor: pointer;
+    transition: 0.5s;
+    box-shadow: 0 5px 4px rgba(0,0,0, .5);
+    transform: scale(0.7);
+
+}
+
+.social-icons .fab:hover{
+    color: #fff;
+}
+.social-icons ul li .fab:hover{
+    transform: translate(0, -10px);
+}
+
+
+.social-icons ul li:nth-child(1) .fab:hover {
+  background-color: #1877F2; 
+}
+
+
+.social-icons ul li:nth-child(2) .fab:hover {
+  background-color: #E4405F; 
+}
+
+.copyright{
+    text-align: center;
+}
+.underline{
+    width: 100%;
+    height: 3px;
+    background: #767676;
+    border-radius: 4px;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+.underline span{
+    width: 15px;
+    height: 100%;
+    background: #fff;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    animation: moving 2s linear infinite;
+}
+@keyframes moving{
+    0%{
+        left: -20px;
+    }
+    100%{
+        left: 100%;
+    }
+}
+@media (max-width: 700px){
+    footer{
+        bottom: unset;
+    }
+    .col{
+    flex-basis: 25%;
+    }
+
+    .col:nth-child(2),.col:nth-child(3) {
+    flex-basis: 100%;
+    }
+   
+
+}
+ @media (max-width: 1440px){
+    .card-container {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+ }
+
+ @media (max-width: 1024px){
+    .card{
+        width: 250px;
+        height: 350px;
+    }
+ }
+
+ @media (max-width: 600px){
+    .card-container{
+        flex-direction: column;
+    }
+    
+ }
+h6 {
+    font-family:"Open Sans";
+    font-size: 17px;
+    position: relative; 
+    display: inline-block; 
+    padding-bottom: 8px; 
+}

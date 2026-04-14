@@ -1,0 +1,1245 @@
+ *{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body{
+   font-family:  "montserrat";
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #fff;
+  display: flex;
+  height: 80px;
+  justify-content: space-between; /* This pushes logo to left and nav/search to right automatically */
+  align-items: center;
+  padding: 0 5%; /* Use percentages so it scales with the screen */
+}
+
+
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px, 20px;
+    margin-top: 20px;
+}
+
+.sub-header {
+  background-color: #0077b6;
+  color: white;
+  padding: 40px 20px;
+}
+
+.navbar-b{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px, 20px;
+    margin-top: 20px;
+}
+
+.navbar-b ul li a{
+    color: white;
+    padding: 7px 13px;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+.navbar-b ul li a{
+    background-color: transparent;
+    transition: 0.5s;
+    text-transform: uppercase;
+
+}
+
+.navbar-b ul li a:hover{
+    background-color: black;
+    border-radius: 20px;
+}
+
+.logo img{
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 0 30px;
+    padding-left: 2px;
+    margin: 0;
+    margin-top: -29px;
+}
+
+
+
+.navbar ul{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 0px;
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    gap: 35px;
+    margin-left: 30px;
+    margin-right: 25px;
+    padding: 0%;
+    margin-top: -25px;
+    font-family: "Proxima Nova","Proxima Nova Fallback","sans-serif";
+    list-style: none;
+}
+
+nav ul li a{
+    color: rgb(74, 74, 247);
+    padding: 7px 0;
+    font-size: 17px;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+}
+
+nav ul li a:hover{
+    color:   #9b294f;
+    transition: .3s;
+    border-bottom: 2px solid   #9b294f;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* keep logo left, search right */
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 1000;
+}
+
+
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+
+
+.search-box {
+  position: relative;      /* for absolute results */
+  flex-shrink: 0;          /* prevents the box from shrinking */
+}
+
+
+
+.search-input {
+  width: 250px;
+  transition: width 0.3s ease;
+}
+
+
+
+.search-input:focus {
+  width: 300px;             /* expand to right on focus */
+}
+
+
+
+.checkbtn{
+    font-size: 15px;
+    color: black;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check{
+    display: none;
+}
+
+@media (max-width: 952px){
+    label.logo{
+        font-size: 30px;
+        padding-left: 10px;
+    }
+
+    nav ul li a{
+        font-size: 16px;
+    }
+
+}
+
+@media (max-width: 958px) {
+  .sub-header {
+    width: 100%;
+  }
+
+
+
+ /* Subnav container */
+
+.subnav-ul {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2px;
+  padding: 0;
+  color: transparent;
+  margin: 0;
+  list-style: none;
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on mobile */
+}
+
+
+
+/* Subnav items */
+
+.subnav-li {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  gap: 2px;
+  padding: 4px, 6px;
+}
+
+
+
+/* Links */
+
+.subnav-li a {
+  text-decoration: none;
+  color: transparent;
+  padding: 4px 6px;
+  display: block;
+}
+
+.subnav-ul,
+
+.subnav-li,
+
+.subnav-li a {
+
+    gap: 2px;
+
+}
+
+#check:checked ~ .subnav-ul {
+    left: initial;
+
+}
+
+ 
+
+.subnav-ul,
+
+.subnav-li,
+
+.subnav-li a{
+    all: unset;
+    padding-right: 35px;
+    display: flex;
+}
+
+}
+
+.subnav-ul {
+    overflow-x: auto;
+}
+
+.search {
+    align-items: center;
+    margin-right: 60px;
+    margin-left: 40px;
+    margin-top: -15px;
+}
+
+
+
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    border-bottom: 8px;
+    padding: 6px 10px;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: black;
+    display: none;
+}
+
+.search-input {
+    width: 250px;
+    padding: 8px 10px 8px 38px;  /* space for icon */
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: #fff;
+    outline: none;
+    color: #333;
+    font-size: 15px;
+}
+
+.search-input:focus {
+    border: 1px solid black;
+}
+
+
+#searchResults {
+  position: absolute;
+  top: 100%;        /* ⬅️ puts it UNDER the search input */
+  left: 0;
+  width: 100%;     /* same width as input */
+  background-color: white;
+  margin-top: 6px;
+  padding: 0;
+  list-style: none;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 9999;
+}
+
+#searchResults li {
+  color: black;  
+  padding: 10px 14px;
+  cursor: pointer;
+  white-space: nowrap;  /* prevents sideways growth */
+}
+
+#searchResults li,
+
+#searchResults li a {
+  color: black !important;
+}
+
+
+
+#searchResults li:hover a{
+  background-color: rgb(8, 158, 245);
+  border-radius: 15px;
+}
+
+
+
+@media (max-width: 1250px) {
+
+ #searchResults {
+  position: absolute;
+  top: 100%;        /* ⬅️ puts it UNDER the search input */
+  left: -47px;
+  width: 100%;
+  max-width: 300px;
+  background: white;
+  margin-top: 6px;
+  display: none;
+  padding: 0;
+  list-style: none;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 9999;
+  border: 1px solid #ccc; /* Optional: adds a border to match the input */
+  border-radius: 8px;     /* Optional: matches your search box curves */
+}
+
+#searchResults.show {
+  display: block;
+
+}
+
+#searchResults li {
+  color: black;  
+  padding: 10px 14px;
+  cursor: pointer;
+  white-space: nowrap;  /* prevents sideways growth */
+
+}
+
+#searchResults li,
+#searchResults li a {
+  color: black !important;
+
+}
+
+
+
+#searchResults li:hover a{
+  background-color:  rgb(12, 122, 185);
+  border-radius: 15px;
+
+}
+
+ .search-input {
+    width: 180px;
+    transition: width 0.3s ease;
+    flex-shrink: 0;
+  }
+
+
+
+  .search-input:focus {
+    width: 180px;
+  }
+
+
+    .search {
+        position: absolute;
+        top: 0;
+        right: 15px;
+        z-index: 9999;
+    }
+
+    .search-box {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        top: 5px;
+        }
+
+    .search-icon {
+        position: absolute;
+        top: 40px;
+        right: 15px;
+        left: auto;
+        transform: none;
+        font-size: 19px;
+        color: black;
+        display: none;
+    }
+
+    #toggle-search {
+        display: none;
+    }
+
+    .toggle-label {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .search-input {
+        display: none;
+        right: 50px;           /* aligns it under the icon */
+        top: 30px;
+        width: 160px;
+        position: relative;
+    }
+    #toggle-search:checked + label + .search-input {
+
+        display: block;
+
+    }
+    #toggle-search:checked + label + .search-input {
+        display: block;
+
+    }
+    .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: white;
+  }
+
+
+  label .logo {
+    margin-left: 0;
+    padding-left: 0; 
+    margin-top: 20px;
+    align-self: flex-start;
+  }
+
+  .checkbtn {
+    position: absolute;
+    right: 5px;     /* menu goes right */
+    top: 5px;       /* adjust up/down */
+    cursor: pointer;
+  }
+  .checkbtn{
+        display: block;
+        font-size: 16px;
+        cursor: pointer;
+        color: black;
+    }
+
+    nav ul {
+        position: fixed;
+        width: 94vw;
+        height: 100vh;
+        background: #3f77af;
+        top: 80px;
+        left: -100vw;
+        text-align: center;
+        transition: all .5s ease;
+        z-index: 999;
+        flex-direction: column;
+         justify-content: flex-start;
+        padding-top: 50px;
+        list-style: none;
+    }
+
+
+
+    nav ul li{
+         display: block;
+         margin: 30px 0;
+         line-height: 30px;
+         text-align: center;
+    }
+
+    nav ul li a{
+        font-size: 16px;
+        color: white;
+    }
+
+    nav a:hover {
+        background: none;
+        color:black;
+    }
+
+    html, body {
+        overflow-x: hidden;
+    }
+
+    #check:checked ~ ul {
+        left: 0;
+    }
+
+    #check {
+        display: none;
+    }
+
+    
+    
+}
+header input[type="search"] {
+  width: 50px;
+}
+
+  .navbar-b {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 5px;
+    color: black;
+    position: sticky;
+    top: 0;
+    font-size: 20px;
+    z-index: 10; /* stay above content */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    min-height: 60px;
+    width: 100vw;       /* full viewport width */
+    left: 0;            /* ensure it starts at left edge */
+    margin: 0;          /* remove any inherited margin */
+}
+
+#toggle-search {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    width: 0;
+    height: 0;
+}
+
+
+
+.close-icon {
+    display: none;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    width: 0;
+    height: 0;
+}
+
+#checkbox{
+    display: none;
+}
+
+.main-content {
+    position: relative;
+    padding-left: 40px; /* space for the line */
+}
+
+.main-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 3px;
+    height: 100%;
+    background-color:  #0077b6;
+    border-radius: 1px;
+}
+
+@media (max-width: 1250px) {
+.main-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    
+}
+.main-content {
+    position: relative;
+    padding-left: 0;
+}
+
+}
+
+
+.side-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background-color:  black;
+    border-radius: 1px;
+
+}
+
+.nav-hr {
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+
+.content-hr {
+  width: auto;             /* Changed from 100% to auto so it respects margins */
+  border: none;
+  height: 1px;  
+  background-color: #5589a5;
+  
+  /* MATCH YOUR TEXT INDENT: 
+     Adjust the 40px below until it lines up perfectly with your 'How Should...' header */
+  margin-left: 23px;       
+  margin-right: 40px;      /* Keeps it from hitting the right sidebar */
+  margin-top: -13px;
+  margin-bottom: 12px;
+}
+
+.breast img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;    /* Centers and adds space above/below */
+    border-radius: 20px !important; /* The !important ensures desktop obeys */
+    padding: 10px;        /* Adds a small frame around the photo */
+}
+
+@media (max-width: 768px) {
+    .breast img {
+        padding: 10px;      /* Reduced padding for smaller screens */
+        border-radius: 15px;
+    }
+}
+
+h1 {
+
+    font-family:"Open Sans";
+    white-space: normal;
+    word-wrap: break-word;
+    line-height: 1.2;
+    font-size: 2.5rem;
+    padding: 20px;
+    margin-top: 0;
+    margin-bottom: 2px;
+}
+
+.side-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+.main-content p {
+    font-family: "Open Sans";
+    text-align: justify;
+    font-size: 20px;
+    line-height: 35px;
+    padding: 20px;
+    margin-top: -10px;
+    margin-bottom: 18px;
+
+}
+
+
+.main-content ul {
+  margin-bottom: 12px;
+  margin-left: 25px;
+  padding-left: 20px;
+  list-style-type: none;
+  font-size: 20px;
+  font-family: "Open Sans";
+
+}
+
+.side-content ul{
+  margin-bottom: 12px;
+  margin-left: 0;
+  padding-left: 0;
+  list-style-type: none;
+  font-size: 18px;
+
+}
+
+.side-content li{
+    padding: 5px;
+    margin-top: 9px;
+}
+
+.side-content p {
+    font-size: 18px;
+    padding-left: 3px;
+
+}
+
+.side-nav a.active {
+  color: #5589a5;
+  font-weight: 600;
+  border-left: 3px solid #5589a5;
+  padding-left: 10px;
+
+}
+
+/* --- MOBILE REFRESH FIX --- */
+@media (max-width: 768px) {
+    /* 1. Fix the squeezed text */
+    h1, h2, .main-content p {
+        padding: 15px;
+        width: 100%;
+        text-align: left;               /* Justify can sometimes look weird on small screens */
+    }
+
+    /* 2. Fix the giant header causing word cutoffs */
+    h1 {
+        font-size: 1.8rem !important;   /* Makes the title fit the screen width */
+        line-height: 1.2;
+        margin-top: 15px;
+    }
+    h3{
+        font-size: 1.5rem;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    h2 {
+        font-size: 1.5rem !important;
+    }
+
+    /* 3. Adjust the main content paragraph */
+    .main-content p {
+        font-size: 20px !important;
+        line-height: 35px;
+        margin-top: 2px !important;  /* Adjust this number to pull text closer */
+        padding-top: 0px !important;
+        margin-bottom: 5px;
+
+    }
+
+    /* 4. Fix the blue line alignment */
+    .main-content::before {
+        display: none; /* Hide the vertical line on mobile to save space */
+    }
+    
+    .main-content {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    /* 5. Fix the list items */
+    .main-content ul {
+        padding: 20px !important; /* Ensures bullets don't fly off screen */
+        font-size: 20px !important;
+        margin-bottom: 5px;
+        
+    }
+
+}
+h2 {
+    font-family: "Open Sans";
+    text-align: justify;
+    font-size: 30px;
+    line-height: 1.6;
+    padding: 20px;
+    margin-top: 0;
+    margin-bottom: 2px;
+
+}
+
+@media (max-width: 768px) {
+    
+    .main-content, #div2, .div {
+        width: 100% !important;
+        display: block !important;
+    }
+}
+h3 {
+    font-family:"Open Sans";
+    line-height: 1.2;
+    font-size: 24px;
+    margin-bottom: 3px;
+    padding: 20px;
+    margin-top: 0;
+    margin-bottom: 2px;
+
+}
+
+h6 {
+    font-family:"Open Sans";
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+
+.side-content h5 {
+  position: sticky;      /* make the header stick inside the sidebar */
+  top: 0;                /* sticks at the top of sidebar container */
+  background: #f7f9fa;   /* same as sidebar so it doesn't overlap content */
+  padding: 10px 0;       /* optional spacing */
+  z-index: 10;           /* ensure it stays above list items */
+  margin-bottom: 20px;
+ font-size: 18px;
+
+}
+
+
+.b1 li::before {
+    content: "\2022";
+    color: rgb(41, 169, 207);
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    margin-bottom: 28px;
+    font-weight: 600;
+    font-size: large;
+
+}
+
+@media (max-width: 858px){
+
+    .b1 {
+        all: unset;
+        list-style: none;       /* keep your custom bullets */
+        padding: 20px;     /* space for bullets */
+        margin: 0;
+        display: block;         /* FIX: never use flex on <ul> with custom bullets */
+        font-size: 20px;
+        margin-top: 0;
+        padding-top: 0;
+
+    }
+
+.b1 li {
+    /* REDUCE THIS: Changed from 18px to 8px to tighten vertical gap */
+    margin-bottom: 5px;    
+    display: list-item;     
+    position: relative;
+}
+
+.b1 li::before {           
+    content: "\2022";
+    color: rgb(41, 169, 207);
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    
+    /* CHANGE THIS: Set to 0 or a very small number. 
+       28px was pushing the text line away from the bottom. */
+    margin-bottom: 0px; 
+    
+    font-weight: 600;
+    font-size: large;
+}
+}
+
+
+
+.div{
+    width: 100%;
+
+}
+
+
+.disease-layout {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+
+}
+
+.main-content {
+    flex: 2;
+    padding-right: 30px;
+}
+
+#div2{
+    width: auto;
+
+}
+
+  .side-content {
+  flex: 1;
+  background: #fff;
+  min-height: 100px;
+  padding: 20px;
+  border-radius: 12px;
+  position: sticky;   /* keeps it visible while scrolling */
+  top: 80px;          /* distance from top of viewport */
+  align-self: flex-start; /* ensure it sticks to the top in flex layout */
+
+}
+
+@media (max-width: 768px) {
+  .side-content {
+    position: static;
+
+  }
+
+}
+
+/* Hide side content on half-desktop and smaller */
+
+@media (max-width: 1200px) {
+  .side-content {
+    display: none;
+
+  }
+
+}
+
+
+@media (min-width: 1201px) {
+  .side-content {
+    display: block; /* or flex, depending on your layout */
+
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .disease-layout {
+    flex-direction: column;
+
+  }
+
+}
+
+
+.highlight{
+    color: hsl(240, 78%, 66%);
+
+}
+
+body footer{
+    background: darkslateblue;
+}
+
+footer{
+    width: 100%;
+    background:  linear-gradient(to right, #00093c #2d0b00);
+    color: #fff;
+    padding: 100px 0 30px;
+    font-size: 13px;
+    line-height: 20px;
+
+}
+
+
+.footer-content p{
+    width: 100px;
+    margin: auto;
+}
+
+.row{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 15px;
+
+}
+
+.col{
+    flex-basis: 25%;
+    padding: 10px;
+
+}
+
+.col:nth-child(2),.col:nth-child(3) {
+    flex-basis: 15%;
+
+}
+
+.logo{
+    width: 60px;
+    margin-bottom: 30px;
+
+}
+
+.col p {
+    padding: 0%;
+
+}
+
+ .col h3{
+    width: fit-content;
+    padding: 0%;
+    margin-bottom: 20px;
+    position: relative;
+
+}
+
+.col a {
+    color: white;
+
+}
+
+.col form{
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 50px;
+
+}
+
+form .fa{
+    font-size: 18px;
+    margin-right: 10px;
+
+}
+
+form input{
+    width: 100%;
+    background: transparent;
+    color: #ccc;
+    border: 0;
+    outline: none;
+    padding-left: 10px;
+
+}
+
+form button{
+    background: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+
+}
+
+form button .fa{
+    font-size: 20px;
+    color: #ccc;
+
+}
+
+form button .a {
+     font-size: 15px;
+     color: #ccc;
+
+}
+
+h4{
+    font-size: 14px;
+    border-bottom: 1px;
+    font-family: "Open Sans";
+
+}
+
+.social-icons {
+  position: relative;
+}
+
+.social-icons ul {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  padding-left: 0;
+  margin-left: 0;
+
+}
+
+.social-icons ul li {
+    list-style: none;
+    padding-left: 10px;
+
+}
+
+@media (max-width: 858px) {
+  .social-icons ul {
+    position: absolute;
+   transform: translate(-10%, -70%);
+   display: flex;
+  }
+}
+
+.social-icons .fab{
+    font-size: 20px;
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    text-align: center;
+    background: #fff;
+    color: #000;
+    margin-right: 15px;
+    cursor: pointer;
+    transition: 0.5s;
+    box-shadow: 0 5px 4px rgba(0,0,0, .5);
+    transform: scale(0.7);
+}
+
+.social-icons .fab:hover{
+    color: #fff;
+
+}
+
+.social-icons ul li .fab:hover{
+    transform: translate(0, -10px);
+
+}
+
+
+.social-icons ul li:nth-child(1) .fab:hover {
+  background-color: #1877F2;
+
+}
+
+
+.social-icons ul li:nth-child(2) .fab:hover {
+  background-color: #E4405F;
+
+}
+
+.copyright{
+    text-align: center;
+
+}
+
+.underline{
+    width: 100%;
+    height: 3px;
+    background: #767676;
+    border-radius: 4px;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+
+}
+
+.underline span{
+    width: 15px;
+    height: 100%;
+    background: #fff;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    animation: moving 2s linear infinite;
+
+}
+
+@keyframes moving{
+
+    0%{
+        left: -20px;
+    }
+    100%{
+        left: 100%;
+
+    }
+
+}
+
+@media (max-width: 700px){
+
+    footer{
+        bottom: unset;
+
+    }
+
+    .col{
+    flex-basis: 25%;
+    }
+
+    .col:nth-child(2),.col:nth-child(3) {
+    flex-basis: 100%;
+
+    }
+
+}
+
+ @media (max-width: 1440px){
+
+    .card-container {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+
+    }
+
+ }
+
+
+ @media (max-width: 1024px){
+
+    .card{
+        width: 250px;
+        height: 350px;
+
+    }
+
+ }
+
+
+ @media (max-width: 600px){
+
+    .card-container{
+        flex-direction: column;
+
+    }
+
+   
+
+ }
+
